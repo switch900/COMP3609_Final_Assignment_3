@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="a7ba0ef1-68b0-45f9-bcf5-1e65d7fd6539" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="c8acc60c-26ce-414a-8043-a83a655b8e47" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
   <ClientOptions>
     <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
     <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
@@ -22,11 +22,11 @@
     <MetadataSource Address="http://localhost:60217/ImdbService.svc" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="ImdbService.xsd" MetadataType="Schema" ID="1d271089-eb7d-468c-800b-0ab4ea3f3e96" SourceId="1" SourceUrl="http://localhost:60217/ImdbService.svc?xsd=xsd1" />
-    <MetadataFile FileName="ImdbService.disco" MetadataType="Disco" ID="10458734-9634-403c-8502-b19cfd8276e7" SourceId="1" SourceUrl="http://localhost:60217/ImdbService.svc?disco" />
-    <MetadataFile FileName="ImdbService1.xsd" MetadataType="Schema" ID="32c2b34c-2c9b-4ef5-9955-15bd19811a75" SourceId="1" SourceUrl="http://localhost:60217/ImdbService.svc?xsd=xsd2" />
-    <MetadataFile FileName="ImdbService.wsdl" MetadataType="Wsdl" ID="1e2be6e4-0d57-4772-9618-0e833a2c8c06" SourceId="1" SourceUrl="http://localhost:60217/ImdbService.svc?wsdl" />
-    <MetadataFile FileName="ImdbService2.xsd" MetadataType="Schema" ID="6277216e-9113-48ab-b19e-0bbec3ce0fa9" SourceId="1" SourceUrl="http://localhost:60217/ImdbService.svc?xsd=xsd0" />
+    <MetadataFile FileName="ImdbService.xsd" MetadataType="Schema" ID="335f1939-c24d-4f7d-81bc-1098927ffe55" SourceId="1" SourceUrl="http://localhost:60217/ImdbService.svc?xsd=xsd1" />
+    <MetadataFile FileName="ImdbService.disco" MetadataType="Disco" ID="38f57c39-b27e-4c63-baf0-e1913f910605" SourceId="1" SourceUrl="http://localhost:60217/ImdbService.svc?disco" />
+    <MetadataFile FileName="ImdbService1.xsd" MetadataType="Schema" ID="1046d4fd-1862-4d59-901b-f7dec67eedd4" SourceId="1" SourceUrl="http://localhost:60217/ImdbService.svc?xsd=xsd2" />
+    <MetadataFile FileName="ImdbService.wsdl" MetadataType="Wsdl" ID="6d813059-9d3d-431e-83c2-f1985902b3c9" SourceId="1" SourceUrl="http://localhost:60217/ImdbService.svc?wsdl" />
+    <MetadataFile FileName="ImdbService2.xsd" MetadataType="Schema" ID="ce3dd014-ca48-4233-be26-221f6c7981f1" SourceId="1" SourceUrl="http://localhost:60217/ImdbService.svc?xsd=xsd0" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />

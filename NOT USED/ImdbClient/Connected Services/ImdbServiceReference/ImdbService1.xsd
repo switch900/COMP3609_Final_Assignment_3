@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/ImdbServiceApp" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/ImdbServiceApp" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="ArrayOfMovies">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Movies" nillable="true" type="tns:Movies" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfMovies" nillable="true" type="tns:ArrayOfMovies" />
+  <xs:complexType name="Movies">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="endYear" nillable="true" type="xs:short" />
+      <xs:element minOccurs="0" name="genres" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="isAdult" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="originalTitle" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="primaryTitle" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="runtimeMinutes" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="startYear" nillable="true" type="xs:short" />
+      <xs:element minOccurs="0" name="tconst" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="titleType" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Movies" nillable="true" type="tns:Movies" />
+</xs:schema>

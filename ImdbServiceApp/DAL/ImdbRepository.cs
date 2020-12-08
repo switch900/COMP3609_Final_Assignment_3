@@ -1,18 +1,22 @@
-﻿using ImdbServiceApp.DAL;
+﻿using System.Collections.Generic;
+using System.Data.Entity;
+using System.Linq;
+using System.Threading.Tasks;
 
-namespace ImdbServiceApp
+namespace ImdbServiceApp.DAL
 {
-    public class ImdbService : ImdbRepository, IImdbService { }
-}
-   //   public class ImdbService : IImdbService
-    
- /*   {
+    public class ImdbRepository : IImdbRepository
+    {
+        
         private DbContext Context { get; set; }
 
-
-        public ImdbService(DbContext inContext)
+        public ImdbRepository()
         {
-            Context = inContext;
+        }
+
+        public ImdbRepository(DbContext context)
+        {
+            Context = context;
         }
 
         public IEnumerable<Movies> GetAllMovies()
@@ -40,9 +44,9 @@ namespace ImdbServiceApp
         public int CountAllMoviesByPredicate(string predicate)
         {
             using (ImdbEntities ctx = new ImdbEntities())
-            {           
-               var _moviesCount = ctx.Movies
-                       .SqlQuery("Select * from [IMDb].[movie].[titlebasics] where primaryTitle like '%" + predicate + "%' order by tconst").Count();
+            {
+                var _moviesCount = ctx.Movies
+                        .SqlQuery("Select * from [IMDb].[movie].[titlebasics] where primaryTitle like '%" + predicate + "%' order by tconst").Count();
                 return _moviesCount;
             }
         }
@@ -69,17 +73,6 @@ namespace ImdbServiceApp
             }
         }
 
-        public async Task<IEnumerable<Movies>> GetAllMoviesByPredicateAsync(string predicate)
-        {
-            using (ImdbEntities ctx = new ImdbEntities())
-            {
-                var _movies = await ctx.Movies
-                       .SqlQuery("Select * from [IMDb].[movie].[titlebasics] where primaryTitle like '%" + predicate + "%'")
-                       .ToListAsync();
-                return _movies;
-            }
-        }
-
         public async Task<int> GetAllMoviesByPredicateCountAsync(string predicate)
         {
             using (ImdbEntities ctx = new ImdbEntities())
@@ -89,7 +82,6 @@ namespace ImdbServiceApp
                        .CountAsync();
                 return await _movies;
             }
-
         }
 
         public Movies GetAllMoviesById(string id)
@@ -131,7 +123,7 @@ namespace ImdbServiceApp
             usrdtl = movie;
             tstDb.Entry(usrdtl).State = EntityState.Added;
             int Retval = tstDb.SaveChanges();
-            return Retval;          
+            return Retval;
         }
 
         public int UpdateMovie(Movies movie)
@@ -145,6 +137,3 @@ namespace ImdbServiceApp
         }
     }
 }
-
-
-*/

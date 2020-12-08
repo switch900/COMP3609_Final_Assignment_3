@@ -7,72 +7,92 @@
       <xsd:import schemaLocation="http://localhost:60217/ImdbService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/ImdbServiceApp" />
     </xsd:schema>
   </wsdl:types>
-  <wsdl:message name="IImdbService_DoWork_InputMessage">
-    <wsdl:part name="parameters" element="tns:DoWork" />
-  </wsdl:message>
-  <wsdl:message name="IImdbService_DoWork_OutputMessage">
-    <wsdl:part name="parameters" element="tns:DoWorkResponse" />
-  </wsdl:message>
-  <wsdl:message name="IImdbService_GetAllMovies_InputMessage">
+  <wsdl:message name="IImdbRepository_GetAllMovies_InputMessage">
     <wsdl:part name="parameters" element="tns:GetAllMovies" />
   </wsdl:message>
-  <wsdl:message name="IImdbService_GetAllMovies_OutputMessage">
+  <wsdl:message name="IImdbRepository_GetAllMovies_OutputMessage">
     <wsdl:part name="parameters" element="tns:GetAllMoviesResponse" />
   </wsdl:message>
-  <wsdl:message name="IImdbService_AddMovie_InputMessage">
+  <wsdl:message name="IImdbRepository_GetAllMoviesByPredicate_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllMoviesByPredicate" />
+  </wsdl:message>
+  <wsdl:message name="IImdbRepository_GetAllMoviesByPredicate_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllMoviesByPredicateResponse" />
+  </wsdl:message>
+  <wsdl:message name="IImdbRepository_GetAllMoviesByPredicateCount_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllMoviesByPredicateCount" />
+  </wsdl:message>
+  <wsdl:message name="IImdbRepository_GetAllMoviesByPredicateCount_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllMoviesByPredicateCountResponse" />
+  </wsdl:message>
+  <wsdl:message name="IImdbRepository_GetAllMoviesPaged_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllMoviesPaged" />
+  </wsdl:message>
+  <wsdl:message name="IImdbRepository_GetAllMoviesPaged_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllMoviesPagedResponse" />
+  </wsdl:message>
+  <wsdl:message name="IImdbRepository_AddMovie_InputMessage">
     <wsdl:part name="parameters" element="tns:AddMovie" />
   </wsdl:message>
-  <wsdl:message name="IImdbService_AddMovie_OutputMessage">
+  <wsdl:message name="IImdbRepository_AddMovie_OutputMessage">
     <wsdl:part name="parameters" element="tns:AddMovieResponse" />
   </wsdl:message>
-  <wsdl:message name="IImdbService_GetAllMoviesById_InputMessage">
+  <wsdl:message name="IImdbRepository_GetAllMoviesById_InputMessage">
     <wsdl:part name="parameters" element="tns:GetAllMoviesById" />
   </wsdl:message>
-  <wsdl:message name="IImdbService_GetAllMoviesById_OutputMessage">
+  <wsdl:message name="IImdbRepository_GetAllMoviesById_OutputMessage">
     <wsdl:part name="parameters" element="tns:GetAllMoviesByIdResponse" />
   </wsdl:message>
-  <wsdl:message name="IImdbService_UpdateMovie_InputMessage">
+  <wsdl:message name="IImdbRepository_UpdateMovie_InputMessage">
     <wsdl:part name="parameters" element="tns:UpdateMovie" />
   </wsdl:message>
-  <wsdl:message name="IImdbService_UpdateMovie_OutputMessage">
+  <wsdl:message name="IImdbRepository_UpdateMovie_OutputMessage">
     <wsdl:part name="parameters" element="tns:UpdateMovieResponse" />
   </wsdl:message>
-  <wsdl:message name="IImdbService_DeleteMovieById_InputMessage">
+  <wsdl:message name="IImdbRepository_DeleteMovieById_InputMessage">
     <wsdl:part name="parameters" element="tns:DeleteMovieById" />
   </wsdl:message>
-  <wsdl:message name="IImdbService_DeleteMovieById_OutputMessage">
+  <wsdl:message name="IImdbRepository_DeleteMovieById_OutputMessage">
     <wsdl:part name="parameters" element="tns:DeleteMovieByIdResponse" />
   </wsdl:message>
-  <wsdl:portType name="IImdbService">
-    <wsdl:operation name="DoWork">
-      <wsdl:input wsaw:Action="http://tempuri.org/IImdbService/DoWork" message="tns:IImdbService_DoWork_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IImdbService/DoWorkResponse" message="tns:IImdbService_DoWork_OutputMessage" />
-    </wsdl:operation>
+  <wsdl:portType name="IImdbRepository">
     <wsdl:operation name="GetAllMovies">
-      <wsdl:input wsaw:Action="http://tempuri.org/IImdbService/GetAllMovies" message="tns:IImdbService_GetAllMovies_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IImdbService/GetAllMoviesResponse" message="tns:IImdbService_GetAllMovies_OutputMessage" />
+      <wsdl:input wsaw:Action="http://tempuri.org/IImdbRepository/GetAllMovies" message="tns:IImdbRepository_GetAllMovies_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IImdbRepository/GetAllMoviesResponse" message="tns:IImdbRepository_GetAllMovies_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllMoviesByPredicate">
+      <wsdl:input wsaw:Action="http://tempuri.org/IImdbRepository/GetAllMoviesByPredicate" message="tns:IImdbRepository_GetAllMoviesByPredicate_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IImdbRepository/GetAllMoviesByPredicateResponse" message="tns:IImdbRepository_GetAllMoviesByPredicate_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllMoviesByPredicateCount">
+      <wsdl:input wsaw:Action="http://tempuri.org/IImdbRepository/GetAllMoviesByPredicateCount" message="tns:IImdbRepository_GetAllMoviesByPredicateCount_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IImdbRepository/GetAllMoviesByPredicateCountResponse" message="tns:IImdbRepository_GetAllMoviesByPredicateCount_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllMoviesPaged">
+      <wsdl:input wsaw:Action="http://tempuri.org/IImdbRepository/GetAllMoviesPaged" message="tns:IImdbRepository_GetAllMoviesPaged_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IImdbRepository/GetAllMoviesPagedResponse" message="tns:IImdbRepository_GetAllMoviesPaged_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="AddMovie">
-      <wsdl:input wsaw:Action="http://tempuri.org/IImdbService/AddMovie" message="tns:IImdbService_AddMovie_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IImdbService/AddMovieResponse" message="tns:IImdbService_AddMovie_OutputMessage" />
+      <wsdl:input wsaw:Action="http://tempuri.org/IImdbRepository/AddMovie" message="tns:IImdbRepository_AddMovie_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IImdbRepository/AddMovieResponse" message="tns:IImdbRepository_AddMovie_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="GetAllMoviesById">
-      <wsdl:input wsaw:Action="http://tempuri.org/IImdbService/GetAllMoviesById" message="tns:IImdbService_GetAllMoviesById_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IImdbService/GetAllMoviesByIdResponse" message="tns:IImdbService_GetAllMoviesById_OutputMessage" />
+      <wsdl:input wsaw:Action="http://tempuri.org/IImdbRepository/GetAllMoviesById" message="tns:IImdbRepository_GetAllMoviesById_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IImdbRepository/GetAllMoviesByIdResponse" message="tns:IImdbRepository_GetAllMoviesById_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="UpdateMovie">
-      <wsdl:input wsaw:Action="http://tempuri.org/IImdbService/UpdateMovie" message="tns:IImdbService_UpdateMovie_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IImdbService/UpdateMovieResponse" message="tns:IImdbService_UpdateMovie_OutputMessage" />
+      <wsdl:input wsaw:Action="http://tempuri.org/IImdbRepository/UpdateMovie" message="tns:IImdbRepository_UpdateMovie_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IImdbRepository/UpdateMovieResponse" message="tns:IImdbRepository_UpdateMovie_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="DeleteMovieById">
-      <wsdl:input wsaw:Action="http://tempuri.org/IImdbService/DeleteMovieById" message="tns:IImdbService_DeleteMovieById_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IImdbService/DeleteMovieByIdResponse" message="tns:IImdbService_DeleteMovieById_OutputMessage" />
+      <wsdl:input wsaw:Action="http://tempuri.org/IImdbRepository/DeleteMovieById" message="tns:IImdbRepository_DeleteMovieById_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IImdbRepository/DeleteMovieByIdResponse" message="tns:IImdbRepository_DeleteMovieById_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
-  <wsdl:binding name="BasicHttpBinding_IImdbService" type="tns:IImdbService">
+  <wsdl:binding name="BasicHttpBinding_IImdbRepository" type="tns:IImdbRepository">
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
-    <wsdl:operation name="DoWork">
-      <soap:operation soapAction="http://tempuri.org/IImdbService/DoWork" style="document" />
+    <wsdl:operation name="GetAllMovies">
+      <soap:operation soapAction="http://tempuri.org/IImdbRepository/GetAllMovies" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -80,8 +100,26 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="GetAllMovies">
-      <soap:operation soapAction="http://tempuri.org/IImdbService/GetAllMovies" style="document" />
+    <wsdl:operation name="GetAllMoviesByPredicate">
+      <soap:operation soapAction="http://tempuri.org/IImdbRepository/GetAllMoviesByPredicate" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllMoviesByPredicateCount">
+      <soap:operation soapAction="http://tempuri.org/IImdbRepository/GetAllMoviesByPredicateCount" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllMoviesPaged">
+      <soap:operation soapAction="http://tempuri.org/IImdbRepository/GetAllMoviesPaged" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -90,7 +128,7 @@
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="AddMovie">
-      <soap:operation soapAction="http://tempuri.org/IImdbService/AddMovie" style="document" />
+      <soap:operation soapAction="http://tempuri.org/IImdbRepository/AddMovie" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -99,7 +137,7 @@
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="GetAllMoviesById">
-      <soap:operation soapAction="http://tempuri.org/IImdbService/GetAllMoviesById" style="document" />
+      <soap:operation soapAction="http://tempuri.org/IImdbRepository/GetAllMoviesById" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -108,7 +146,7 @@
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="UpdateMovie">
-      <soap:operation soapAction="http://tempuri.org/IImdbService/UpdateMovie" style="document" />
+      <soap:operation soapAction="http://tempuri.org/IImdbRepository/UpdateMovie" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -117,7 +155,7 @@
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="DeleteMovieById">
-      <soap:operation soapAction="http://tempuri.org/IImdbService/DeleteMovieById" style="document" />
+      <soap:operation soapAction="http://tempuri.org/IImdbRepository/DeleteMovieById" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -127,7 +165,7 @@
     </wsdl:operation>
   </wsdl:binding>
   <wsdl:service name="ImdbService">
-    <wsdl:port name="BasicHttpBinding_IImdbService" binding="tns:BasicHttpBinding_IImdbService">
+    <wsdl:port name="BasicHttpBinding_IImdbRepository" binding="tns:BasicHttpBinding_IImdbRepository">
       <soap:address location="http://localhost:60217/ImdbService.svc" />
     </wsdl:port>
   </wsdl:service>

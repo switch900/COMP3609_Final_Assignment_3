@@ -1,32 +1,35 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Runtime.Serialization;
-using System.ServiceModel;
-using System.Text;
+﻿using ImdbServiceApp.DAL;
 
 namespace ImdbServiceApp
 {
-    // NOTE: You can use the "Rename" command on the "Refactor" menu to change the interface name "IImdbService" in both code and config file together.
-    [ServiceContract]
+    public interface IImdbService : IImdbRepository { }
+}
+/*    [ServiceContract]
     public interface IImdbService
     {
         [OperationContract]
-        void DoWork();
+        IEnumerable<Movies> GetAllMovies();
 
         [OperationContract]
-        List<Movies> GetAllMovies();
+        IEnumerable<Movies> GetAllMoviesByPredicate(string predicate);
 
         [OperationContract]
-        int AddMovie(string Name, string Email);
+        Task<int> GetAllMoviesByPredicateCountAsync(string predicate);
+
+        [OperationContract]
+        IEnumerable<Movies> GetAllMoviesPaged(string predicate, int pagesize, int startindex);
+
+        [OperationContract]
+        int AddMovie(Movies movie);
 
         [OperationContract]
         Movies GetAllMoviesById(string id);
 
         [OperationContract]
-        int UpdateMovie(int Id, string Name, string Email);
+        int UpdateMovie(Movies movie);
 
         [OperationContract]
-        int DeleteMovieById(string Id);
+        int DeleteMovieById(string id);
     }
 }
+*/

@@ -15,11 +15,22 @@ namespace ImdbServiceApp
     
     public partial class ImdbEntities : DbContext
     {
+        private Uri uri;
+
         public ImdbEntities()
             : base("name=ImdbEntities")
         {
         }
-    
+
+        public ImdbEntities(Uri uri, object http)
+        {
+            this.uri = uri;
+        }
+
+        public ImdbEntities(string nameOrConnectionString) : base(nameOrConnectionString)
+        {
+        }
+
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             throw new UnintentionalCodeFirstException();

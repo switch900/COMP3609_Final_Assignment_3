@@ -1,16 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <xs:schema xmlns:tns="http://tempuri.org/" elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
   <xs:import schemaLocation="http://localhost:60217/ImdbService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/ImdbServiceApp" />
-  <xs:element name="DoWork">
-    <xs:complexType>
-      <xs:sequence />
-    </xs:complexType>
-  </xs:element>
-  <xs:element name="DoWorkResponse">
-    <xs:complexType>
-      <xs:sequence />
-    </xs:complexType>
-  </xs:element>
   <xs:element name="GetAllMovies">
     <xs:complexType>
       <xs:sequence />
@@ -23,11 +13,54 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
+  <xs:element name="GetAllMoviesByPredicate">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="predicate" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAllMoviesByPredicateResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/ImdbServiceApp" minOccurs="0" name="GetAllMoviesByPredicateResult" nillable="true" type="q2:ArrayOfMovies" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAllMoviesByPredicateCount">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="predicate" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAllMoviesByPredicateCountResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetAllMoviesByPredicateCountResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAllMoviesPaged">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="predicate" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="pagesize" type="xs:int" />
+        <xs:element minOccurs="0" name="startindex" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAllMoviesPagedResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/ImdbServiceApp" minOccurs="0" name="GetAllMoviesPagedResult" nillable="true" type="q3:ArrayOfMovies" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
   <xs:element name="AddMovie">
     <xs:complexType>
       <xs:sequence>
-        <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
-        <xs:element minOccurs="0" name="Email" nillable="true" type="xs:string" />
+        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/ImdbServiceApp" minOccurs="0" name="movie" nillable="true" type="q4:Movies" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -48,16 +81,14 @@
   <xs:element name="GetAllMoviesByIdResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/ImdbServiceApp" minOccurs="0" name="GetAllMoviesByIdResult" nillable="true" type="q2:Movies" />
+        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/ImdbServiceApp" minOccurs="0" name="GetAllMoviesByIdResult" nillable="true" type="q5:Movies" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="UpdateMovie">
     <xs:complexType>
       <xs:sequence>
-        <xs:element minOccurs="0" name="Id" type="xs:int" />
-        <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
-        <xs:element minOccurs="0" name="Email" nillable="true" type="xs:string" />
+        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/ImdbServiceApp" minOccurs="0" name="movie" nillable="true" type="q6:Movies" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -71,7 +102,7 @@
   <xs:element name="DeleteMovieById">
     <xs:complexType>
       <xs:sequence>
-        <xs:element minOccurs="0" name="Id" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="id" nillable="true" type="xs:string" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>

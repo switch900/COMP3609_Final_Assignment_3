@@ -9,297 +9,150 @@
 //------------------------------------------------------------------------------
 
 namespace ImdbClient.ImdbServiceReference {
-    using System.Runtime.Serialization;
-    using System;
     
     
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="Movies", Namespace="http://schemas.datacontract.org/2004/07/ImdbServiceApp")]
-    [System.SerializableAttribute()]
-    public partial class Movies : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ServiceModel.ServiceContractAttribute(ConfigurationName="ImdbServiceReference.IImdbRepository")]
+    public interface IImdbRepository {
         
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IImdbRepository/GetAllMovies", ReplyAction="http://tempuri.org/IImdbRepository/GetAllMoviesResponse")]
+        ImdbServiceApp.Movies[] GetAllMovies();
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.Nullable<short> endYearField;
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IImdbRepository/GetAllMovies", ReplyAction="http://tempuri.org/IImdbRepository/GetAllMoviesResponse")]
+        System.Threading.Tasks.Task<ImdbServiceApp.Movies[]> GetAllMoviesAsync();
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string genresField;
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IImdbRepository/GetAllMoviesByPredicate", ReplyAction="http://tempuri.org/IImdbRepository/GetAllMoviesByPredicateResponse")]
+        ImdbServiceApp.Movies[] GetAllMoviesByPredicate(string predicate);
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.Nullable<bool> isAdultField;
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IImdbRepository/GetAllMoviesByPredicate", ReplyAction="http://tempuri.org/IImdbRepository/GetAllMoviesByPredicateResponse")]
+        System.Threading.Tasks.Task<ImdbServiceApp.Movies[]> GetAllMoviesByPredicateAsync(string predicate);
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string originalTitleField;
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IImdbRepository/GetAllMoviesByPredicateCount", ReplyAction="http://tempuri.org/IImdbRepository/GetAllMoviesByPredicateCountResponse")]
+        int GetAllMoviesByPredicateCount(string predicate);
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string primaryTitleField;
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IImdbRepository/GetAllMoviesByPredicateCount", ReplyAction="http://tempuri.org/IImdbRepository/GetAllMoviesByPredicateCountResponse")]
+        System.Threading.Tasks.Task<int> GetAllMoviesByPredicateCountAsync(string predicate);
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.Nullable<int> runtimeMinutesField;
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IImdbRepository/GetAllMoviesPaged", ReplyAction="http://tempuri.org/IImdbRepository/GetAllMoviesPagedResponse")]
+        ImdbServiceApp.Movies[] GetAllMoviesPaged(string predicate, int pagesize, int startindex);
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.Nullable<short> startYearField;
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IImdbRepository/GetAllMoviesPaged", ReplyAction="http://tempuri.org/IImdbRepository/GetAllMoviesPagedResponse")]
+        System.Threading.Tasks.Task<ImdbServiceApp.Movies[]> GetAllMoviesPagedAsync(string predicate, int pagesize, int startindex);
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string tconstField;
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IImdbRepository/AddMovie", ReplyAction="http://tempuri.org/IImdbRepository/AddMovieResponse")]
+        int AddMovie(ImdbServiceApp.Movies movie);
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string titleTypeField;
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IImdbRepository/AddMovie", ReplyAction="http://tempuri.org/IImdbRepository/AddMovieResponse")]
+        System.Threading.Tasks.Task<int> AddMovieAsync(ImdbServiceApp.Movies movie);
         
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IImdbRepository/GetAllMoviesById", ReplyAction="http://tempuri.org/IImdbRepository/GetAllMoviesByIdResponse")]
+        ImdbServiceApp.Movies GetAllMoviesById(string id);
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Nullable<short> endYear {
-            get {
-                return this.endYearField;
-            }
-            set {
-                if ((this.endYearField.Equals(value) != true)) {
-                    this.endYearField = value;
-                    this.RaisePropertyChanged("endYear");
-                }
-            }
-        }
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IImdbRepository/GetAllMoviesById", ReplyAction="http://tempuri.org/IImdbRepository/GetAllMoviesByIdResponse")]
+        System.Threading.Tasks.Task<ImdbServiceApp.Movies> GetAllMoviesByIdAsync(string id);
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string genres {
-            get {
-                return this.genresField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.genresField, value) != true)) {
-                    this.genresField = value;
-                    this.RaisePropertyChanged("genres");
-                }
-            }
-        }
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IImdbRepository/UpdateMovie", ReplyAction="http://tempuri.org/IImdbRepository/UpdateMovieResponse")]
+        int UpdateMovie(ImdbServiceApp.Movies movie);
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Nullable<bool> isAdult {
-            get {
-                return this.isAdultField;
-            }
-            set {
-                if ((this.isAdultField.Equals(value) != true)) {
-                    this.isAdultField = value;
-                    this.RaisePropertyChanged("isAdult");
-                }
-            }
-        }
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IImdbRepository/UpdateMovie", ReplyAction="http://tempuri.org/IImdbRepository/UpdateMovieResponse")]
+        System.Threading.Tasks.Task<int> UpdateMovieAsync(ImdbServiceApp.Movies movie);
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string originalTitle {
-            get {
-                return this.originalTitleField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.originalTitleField, value) != true)) {
-                    this.originalTitleField = value;
-                    this.RaisePropertyChanged("originalTitle");
-                }
-            }
-        }
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IImdbRepository/DeleteMovieById", ReplyAction="http://tempuri.org/IImdbRepository/DeleteMovieByIdResponse")]
+        int DeleteMovieById(string id);
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string primaryTitle {
-            get {
-                return this.primaryTitleField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.primaryTitleField, value) != true)) {
-                    this.primaryTitleField = value;
-                    this.RaisePropertyChanged("primaryTitle");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Nullable<int> runtimeMinutes {
-            get {
-                return this.runtimeMinutesField;
-            }
-            set {
-                if ((this.runtimeMinutesField.Equals(value) != true)) {
-                    this.runtimeMinutesField = value;
-                    this.RaisePropertyChanged("runtimeMinutes");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Nullable<short> startYear {
-            get {
-                return this.startYearField;
-            }
-            set {
-                if ((this.startYearField.Equals(value) != true)) {
-                    this.startYearField = value;
-                    this.RaisePropertyChanged("startYear");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string tconst {
-            get {
-                return this.tconstField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.tconstField, value) != true)) {
-                    this.tconstField = value;
-                    this.RaisePropertyChanged("tconst");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string titleType {
-            get {
-                return this.titleTypeField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.titleTypeField, value) != true)) {
-                    this.titleTypeField = value;
-                    this.RaisePropertyChanged("titleType");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IImdbRepository/DeleteMovieById", ReplyAction="http://tempuri.org/IImdbRepository/DeleteMovieByIdResponse")]
+        System.Threading.Tasks.Task<int> DeleteMovieByIdAsync(string id);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ServiceModel.ServiceContractAttribute(ConfigurationName="ImdbServiceReference.IImdbService")]
-    public interface IImdbService {
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IImdbService/DoWork", ReplyAction="http://tempuri.org/IImdbService/DoWorkResponse")]
-        void DoWork();
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IImdbService/DoWork", ReplyAction="http://tempuri.org/IImdbService/DoWorkResponse")]
-        System.Threading.Tasks.Task DoWorkAsync();
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IImdbService/GetAllMovies", ReplyAction="http://tempuri.org/IImdbService/GetAllMoviesResponse")]
-        ImdbClient.ImdbServiceReference.Movies[] GetAllMovies();
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IImdbService/GetAllMovies", ReplyAction="http://tempuri.org/IImdbService/GetAllMoviesResponse")]
-        System.Threading.Tasks.Task<ImdbClient.ImdbServiceReference.Movies[]> GetAllMoviesAsync();
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IImdbService/AddMovie", ReplyAction="http://tempuri.org/IImdbService/AddMovieResponse")]
-        int AddMovie(string Name, string Email);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IImdbService/AddMovie", ReplyAction="http://tempuri.org/IImdbService/AddMovieResponse")]
-        System.Threading.Tasks.Task<int> AddMovieAsync(string Name, string Email);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IImdbService/GetAllMoviesById", ReplyAction="http://tempuri.org/IImdbService/GetAllMoviesByIdResponse")]
-        ImdbClient.ImdbServiceReference.Movies GetAllMoviesById(string id);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IImdbService/GetAllMoviesById", ReplyAction="http://tempuri.org/IImdbService/GetAllMoviesByIdResponse")]
-        System.Threading.Tasks.Task<ImdbClient.ImdbServiceReference.Movies> GetAllMoviesByIdAsync(string id);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IImdbService/UpdateMovie", ReplyAction="http://tempuri.org/IImdbService/UpdateMovieResponse")]
-        int UpdateMovie(int Id, string Name, string Email);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IImdbService/UpdateMovie", ReplyAction="http://tempuri.org/IImdbService/UpdateMovieResponse")]
-        System.Threading.Tasks.Task<int> UpdateMovieAsync(int Id, string Name, string Email);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IImdbService/DeleteMovieById", ReplyAction="http://tempuri.org/IImdbService/DeleteMovieByIdResponse")]
-        int DeleteMovieById(string Id);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IImdbService/DeleteMovieById", ReplyAction="http://tempuri.org/IImdbService/DeleteMovieByIdResponse")]
-        System.Threading.Tasks.Task<int> DeleteMovieByIdAsync(string Id);
-    }
-    
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public interface IImdbServiceChannel : ImdbClient.ImdbServiceReference.IImdbService, System.ServiceModel.IClientChannel {
+    public interface IImdbRepositoryChannel : ImdbClient.ImdbServiceReference.IImdbRepository, System.ServiceModel.IClientChannel {
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public partial class ImdbServiceClient : System.ServiceModel.ClientBase<ImdbClient.ImdbServiceReference.IImdbService>, ImdbClient.ImdbServiceReference.IImdbService {
+    public partial class ImdbRepositoryClient : System.ServiceModel.ClientBase<ImdbClient.ImdbServiceReference.IImdbRepository>, ImdbClient.ImdbServiceReference.IImdbRepository {
         
-        public ImdbServiceClient() {
+        public ImdbRepositoryClient() {
         }
         
-        public ImdbServiceClient(string endpointConfigurationName) : 
+        public ImdbRepositoryClient(string endpointConfigurationName) : 
                 base(endpointConfigurationName) {
         }
         
-        public ImdbServiceClient(string endpointConfigurationName, string remoteAddress) : 
+        public ImdbRepositoryClient(string endpointConfigurationName, string remoteAddress) : 
                 base(endpointConfigurationName, remoteAddress) {
         }
         
-        public ImdbServiceClient(string endpointConfigurationName, System.ServiceModel.EndpointAddress remoteAddress) : 
+        public ImdbRepositoryClient(string endpointConfigurationName, System.ServiceModel.EndpointAddress remoteAddress) : 
                 base(endpointConfigurationName, remoteAddress) {
         }
         
-        public ImdbServiceClient(System.ServiceModel.Channels.Binding binding, System.ServiceModel.EndpointAddress remoteAddress) : 
+        public ImdbRepositoryClient(System.ServiceModel.Channels.Binding binding, System.ServiceModel.EndpointAddress remoteAddress) : 
                 base(binding, remoteAddress) {
         }
         
-        public void DoWork() {
-            base.Channel.DoWork();
-        }
-        
-        public System.Threading.Tasks.Task DoWorkAsync() {
-            return base.Channel.DoWorkAsync();
-        }
-        
-        public ImdbClient.ImdbServiceReference.Movies[] GetAllMovies() {
+        public ImdbServiceApp.Movies[] GetAllMovies() {
             return base.Channel.GetAllMovies();
         }
         
-        public System.Threading.Tasks.Task<ImdbClient.ImdbServiceReference.Movies[]> GetAllMoviesAsync() {
+        public System.Threading.Tasks.Task<ImdbServiceApp.Movies[]> GetAllMoviesAsync() {
             return base.Channel.GetAllMoviesAsync();
         }
         
-        public int AddMovie(string Name, string Email) {
-            return base.Channel.AddMovie(Name, Email);
+        public ImdbServiceApp.Movies[] GetAllMoviesByPredicate(string predicate) {
+            return base.Channel.GetAllMoviesByPredicate(predicate);
         }
         
-        public System.Threading.Tasks.Task<int> AddMovieAsync(string Name, string Email) {
-            return base.Channel.AddMovieAsync(Name, Email);
+        public System.Threading.Tasks.Task<ImdbServiceApp.Movies[]> GetAllMoviesByPredicateAsync(string predicate) {
+            return base.Channel.GetAllMoviesByPredicateAsync(predicate);
         }
         
-        public ImdbClient.ImdbServiceReference.Movies GetAllMoviesById(string id) {
+        public int GetAllMoviesByPredicateCount(string predicate) {
+            return base.Channel.GetAllMoviesByPredicateCount(predicate);
+        }
+        
+        public System.Threading.Tasks.Task<int> GetAllMoviesByPredicateCountAsync(string predicate) {
+            return base.Channel.GetAllMoviesByPredicateCountAsync(predicate);
+        }
+        
+        public ImdbServiceApp.Movies[] GetAllMoviesPaged(string predicate, int pagesize, int startindex) {
+            return base.Channel.GetAllMoviesPaged(predicate, pagesize, startindex);
+        }
+        
+        public System.Threading.Tasks.Task<ImdbServiceApp.Movies[]> GetAllMoviesPagedAsync(string predicate, int pagesize, int startindex) {
+            return base.Channel.GetAllMoviesPagedAsync(predicate, pagesize, startindex);
+        }
+        
+        public int AddMovie(ImdbServiceApp.Movies movie) {
+            return base.Channel.AddMovie(movie);
+        }
+        
+        public System.Threading.Tasks.Task<int> AddMovieAsync(ImdbServiceApp.Movies movie) {
+            return base.Channel.AddMovieAsync(movie);
+        }
+        
+        public ImdbServiceApp.Movies GetAllMoviesById(string id) {
             return base.Channel.GetAllMoviesById(id);
         }
         
-        public System.Threading.Tasks.Task<ImdbClient.ImdbServiceReference.Movies> GetAllMoviesByIdAsync(string id) {
+        public System.Threading.Tasks.Task<ImdbServiceApp.Movies> GetAllMoviesByIdAsync(string id) {
             return base.Channel.GetAllMoviesByIdAsync(id);
         }
         
-        public int UpdateMovie(int Id, string Name, string Email) {
-            return base.Channel.UpdateMovie(Id, Name, Email);
+        public int UpdateMovie(ImdbServiceApp.Movies movie) {
+            return base.Channel.UpdateMovie(movie);
         }
         
-        public System.Threading.Tasks.Task<int> UpdateMovieAsync(int Id, string Name, string Email) {
-            return base.Channel.UpdateMovieAsync(Id, Name, Email);
+        public System.Threading.Tasks.Task<int> UpdateMovieAsync(ImdbServiceApp.Movies movie) {
+            return base.Channel.UpdateMovieAsync(movie);
         }
         
-        public int DeleteMovieById(string Id) {
-            return base.Channel.DeleteMovieById(Id);
+        public int DeleteMovieById(string id) {
+            return base.Channel.DeleteMovieById(id);
         }
         
-        public System.Threading.Tasks.Task<int> DeleteMovieByIdAsync(string Id) {
-            return base.Channel.DeleteMovieByIdAsync(Id);
+        public System.Threading.Tasks.Task<int> DeleteMovieByIdAsync(string id) {
+            return base.Channel.DeleteMovieByIdAsync(id);
         }
     }
 }
