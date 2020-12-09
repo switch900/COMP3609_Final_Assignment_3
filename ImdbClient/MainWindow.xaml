@@ -294,29 +294,35 @@
                           RenderTransformOrigin="1,0" 
                           Padding="0" 
                           Grid.ColumnSpan="3" 
-                          SelectionChanged="LvUsers_SelectionChanged">
+                          SelectionChanged="LvUsers_SelectionChanged"
+                          HorizontalContentAlignment="Stretch">
                     <ListView.ItemTemplate>
                         <DataTemplate>
-                            <StackPanel>
-                                <TextBlock Style="{StaticResource tbkStyle}">
-                                    <TextBlock.Inlines>
-                                        <Run Text="_________________________________________"></Run>
-                                    </TextBlock.Inlines>
-                                </TextBlock>
-                                <TextBlock Style="{StaticResource tbkStyle}" 
+                            <Border BorderBrush="MediumTurquoise"
+                                    BorderThickness="1" 
+                                    CornerRadius="10"
+                                    Padding="5">
+                                <StackPanel>
+                                    <TextBlock Style="{StaticResource tbkStyle}" 
                                            FontSize="12" 
                                            FontWeight="Bold">
-                                    <TextBlock.Inlines>
-                                        <Run Text="{Binding primaryTitle}"></Run>
-                                    </TextBlock.Inlines>
-                                </TextBlock>
-                                <TextBlock Style="{StaticResource tbkStyle}">
-                                    <TextBlock.Inlines>
-                                        <Run Text=" "></Run>
-                                        <Run Text="{Binding startYear}"></Run>
-                                    </TextBlock.Inlines>
-                                </TextBlock>
-                            </StackPanel>
+                                        <TextBlock.Inlines>
+                                            <Run Text="{Binding primaryTitle}"/>
+                                        </TextBlock.Inlines>
+                                    </TextBlock>
+                                    <TextBlock Style="{StaticResource tbkStyle}">
+                                        <TextBlock.Inlines>
+                                            <Run Text=" "/>
+                                            <Run Text="{Binding startYear}"/>
+                                        </TextBlock.Inlines>
+                                    </TextBlock>
+                                    <TextBlock Style="{StaticResource tbkStyle}">
+                                        <TextBlock.Inlines>
+                                            <Run Text="{Binding genres}"/>
+                                        </TextBlock.Inlines>
+                                    </TextBlock>
+                                </StackPanel>
+                            </Border>
                         </DataTemplate>
                     </ListView.ItemTemplate>
                 </ListView>

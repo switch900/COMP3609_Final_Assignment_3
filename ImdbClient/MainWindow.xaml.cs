@@ -15,7 +15,7 @@ namespace ImdbClient
     {
         private string predicate = null;
         private readonly int pageSize = 20;
-        private int pageIndex = 1;
+        private int pageIndex = 0;
         private int maxPageIndex = 1;
         public int recordsCount = 0;
         public int _moviesCount = 0;
@@ -48,6 +48,8 @@ namespace ImdbClient
         {
             InitializeComponent();
             client = new ImdbRepositoryClient();
+            lvUsers.ItemsSource = null;
+            lvComments.ItemsSource = null;
         }
 
         private void LoadData()
@@ -266,6 +268,7 @@ namespace ImdbClient
                 saveEqualsCreate = false;
                 MessageBox.Show("Editor is now locked");
                 LockEditor();
+                LoadData();
             }
             else
             {
